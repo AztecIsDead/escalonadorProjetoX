@@ -32,4 +32,10 @@ public class Processo {
     public String getRecurso_necessario(){
         return recurso_necessario;
     }
+
+    @Override
+    public String toString() {
+        return "Processo {Id: " + id + " Nome: " + nome + " Prioridade: " + prioridade + " Ciclos Necessários: " + ciclos_necessarios +
+                " Recurso Necessário: " + recurso_necessario;
+    }
 }
