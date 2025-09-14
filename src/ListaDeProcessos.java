@@ -38,4 +38,23 @@ public class ListaDeProcessos {
         }
         System.out.println("O Processo com id:" + id +" não foi encontrado e não pôde ser removido.");
     }
+
+    public Processo busca(int id){
+        Node temp = head;
+        while (temp != null){
+            if (temp.processo.getId() == id){
+                return temp.processo;
+            }
+            temp = temp.next;
+        }
+        return null;
+    }
+
+    public void exibirProcessos(){
+        Node temp = head;
+        while (temp != null){
+            System.out.println(temp.processo);
+            temp = temp.next;
+        }
+    }
 }
