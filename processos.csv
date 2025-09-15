@@ -1,0 +1,4 @@
+Id,Nome,Prioridade,Ciclos_Necessarios,Recurso_Necessario
+1,Caius,Alta,10,Disco
+2,Renan,Baixa,2,nulo
+3,Felix,Media,5,nulo

@@ -9,7 +9,7 @@ public class CsvProcessosInterativo {
         int idCounter = 1;
 
         System.out.println("Digite os dados (Nome, Prioridade, Ciclos_Necessarios, Recurso_Necessario).");
-        System.out.println("Digite 'sair' no Nome para finalizar:");
+        System.out.println("Digite 'sair' no Nome para finalizar.");
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(csvFile, StandardCharsets.UTF_8))) {
             writer.write("Id,Nome,Prioridade,Ciclos_Necessarios,Recurso_Necessario");
