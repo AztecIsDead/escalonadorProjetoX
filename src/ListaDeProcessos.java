@@ -1,8 +1,10 @@
 public class ListaDeProcessos {
     private Node head;
+    private Node tail;
 
     public ListaDeProcessos() {
         this.head = null;
+        this.tail = null;
     }
 
     public void adicionar(Processo processo) {

@@ -30,8 +30,18 @@ public class Processos {
         return ciclos_necessarios;
     }
 
+    public void reduzirCiclo() { this.ciclos_necessarios--; }
+
     public String getRecurso_necessario(){
         return recurso_necessario;
     }
+        @Override
+        public String toString() {
+            return "Processo {Id: " + id + ", Nome: " + nome +
+                    ", Prioridade: " + prioridade +
+                    ", Ciclos: " + ciclos_necessarios +
+                    ", Recurso: " + recurso_necessario + "}";
+        }
+    }
 }
-}
+
