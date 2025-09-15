@@ -20,8 +20,14 @@ public class Escalonador {
                 int id = Integer.parseInt(dados[0].trim());
                 String nome = dados[1].trim();
                 String prioridadeTxt = dados[2].trim();
-                int prioridade = prioridadeTxt.equalsIgnoreCase("Alta") ? 1 :
-                        prioridadeTxt.equalsIgnoreCase("Média") ? 2 : 3;
+                int prioridade;
+                if (prioridadeTxt.equalsIgnoreCase("Alta")) {
+                    prioridade = 1;
+                } else if (prioridadeTxt.equalsIgnoreCase("Média") || prioridadeTxt.equalsIgnoreCase("Media")) {
+                    prioridade = 2;
+                } else {
+                    prioridade = 3; // Baixa
+                }
                 int ciclos = Integer.parseInt(dados[3].trim());
                 String recurso = dados[4].trim();
 

@@ -1,4 +1,5 @@
 Id,Nome,Prioridade,Ciclos_Necessarios,Recurso_Necessario
-1,Caius,Alta,2,Disco
-2,Renan,Baixa,2,nulo
-3,Felix,Media,2,nulo
+1,Caius,Alta,10,Disco
+2,Dimmy,Alta,8,Nulo
+3,Renan,Media,5,nulo
+4,Felix,baixa,2,nulo
