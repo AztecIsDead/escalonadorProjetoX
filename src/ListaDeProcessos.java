@@ -18,43 +18,24 @@ public class ListaDeProcessos {
         }
     }
 
-    public void remover(int id) {
-        if (head == null) {
-            System.out.println("A lista está vazia!");
-            return;
-        }
-        else if (head.processo.getId() == id) {
-            head = head.next;
-            System.out.println("Processo Removido. id: " + id);
-            return;
-        }
-        Node temp = head;
-        while (temp.next != null) {
-            if (temp.next.processo.getId() == id){
-                temp.next = temp.next.next;
-                System.out.println("Processo Removido. id: " + id);
-                return;
-            }
-        }
-        System.out.println("O Processo com id:" + id +" não foi encontrado e não pôde ser removido.");
+    public Processo remover() {
+        if (head == null) return null;
+        Processo p = head.processo;
+        head = head.next;
+        if (head == null) tail = null;
+        return p;
     }
 
-    public Processo busca(int id){
-        Node temp = head;
-        while (temp != null){
-            if (temp.processo.getId() == id){
-                return temp.processo;
-            }
-            temp = temp.next;
-        }
-        return null;
+    public boolean isEmpty() {
+        return head == null;
     }
 
-    public void exibirProcessos(){
+    public void exibir() {
         Node temp = head;
-        while (temp != null){
+        while (temp != null) {
             System.out.println(temp.processo);
             temp = temp.next;
         }
     }
 }
+
