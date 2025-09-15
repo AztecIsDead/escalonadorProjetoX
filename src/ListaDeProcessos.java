@@ -10,13 +10,11 @@ public class ListaDeProcessos {
     public void adicionar(Processo processo) {
         Node node = new Node(processo);
         if (head == null) {
-            node = head;
+            head = node;
+            tail = node;
         } else {
-            Node temp = head;
-            while (temp.next != null) {
-                temp = temp.next;
-            }
-            temp.next = node;
+            tail.next = node;
+            tail = node;
         }
     }
 
