@@ -4,6 +4,16 @@ public class Processo {
     private int prioridade;
     private int ciclos_necessarios;
     private String recurso_necessario;
+    private boolean jaBloqueado = false;
+
+    public boolean isJaBloqueado() {
+        return jaBloqueado;
+    }
+
+    public void setJaBloqueado(boolean valor) {
+        this.jaBloqueado = valor;
+    }
+
 
     public Processo(int id, String nome, int prioridade, int ciclos_necessarios, String recurso_necessario){
         this.id = id;

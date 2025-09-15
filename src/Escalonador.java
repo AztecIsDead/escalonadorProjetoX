@@ -73,8 +73,9 @@ public class Escalonador {
 
             if (atual == null) continue;
 
-            if (atual.getRecurso_necessario().equalsIgnoreCase("Disco")) {
+            if (atual.getRecurso_necessario().equalsIgnoreCase("Disco") && !atual.isJaBloqueado()) {
                 System.out.println("[BLOQUEADO] " + atual.getNome() + " precisa de Disco.");
+                atual.setJaBloqueado(true); // marca que já passou pelo bloqueio uma vez
                 bloqueados.adicionar(atual);
                 continue;
             }
