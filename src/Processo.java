@@ -32,9 +32,28 @@ public class Processo {
 
     @Override
     public String toString() {
-        return "Processo {Id: " + id + ", Nome: " + nome +
-                ", Prioridade: " + prioridade +
-                ", Ciclos: " + ciclos_necessarios +
-                ", Recurso: " + recurso_necessario + "}";
+        switch (this.prioridade){
+            case 1:
+                return "Processo {Id: " + id + ", Nome: " + nome +
+                    ", Prioridade: " + prioridade + " (Alta)" +
+                    ", Ciclos: " + ciclos_necessarios +
+                    ", Recurso: " + recurso_necessario + "}";
+            case 2:
+                return "Processo {Id: " + id + ", Nome: " + nome +
+                        ", Prioridade: " + prioridade + " (Média)" +
+                        ", Ciclos: " + ciclos_necessarios +
+                        ", Recurso: " + recurso_necessario + "}";
+
+            case 3:
+                return "Processo {Id: " + id + ", Nome: " + nome +
+                        ", Prioridade: " + prioridade + " (Baixa)" +
+                        ", Ciclos: " + ciclos_necessarios +
+                        ", Recurso: " + recurso_necessario + "}";
+            default:
+                return "Processo {Id: " + id + ", Nome: " + nome +
+                        ", Prioridade: " + prioridade +
+                        ", Ciclos: " + ciclos_necessarios +
+                        ", Recurso: " + recurso_necessario + "}";
+        }
     }
 }
