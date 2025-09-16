@@ -1,2 +1,4 @@
-Id,Nome,Prioridade,Ciclos_Necessarios,Recurso_Necessario
-1,TESTE,1,1,nenhum
+ID,Nome,Prioridade,Ciclos,Recurso
+1,Caius,1,10,Disco
+2,Renan,2,2,Nulo
+3,Felix,3,5,Nulo

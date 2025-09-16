@@ -25,9 +25,23 @@ public class Escalonador {
 
                 Processo p = new Processo(id, nome, prioridade, ciclos, recurso);
 
-                if (prioridade == 1) alta.adicionar(p);
-                else if (prioridade == 2) media.adicionar(p);
-                else baixa.adicionar(p);
+                switch (prioridade){
+                    case 1:
+                        alta.adicionar(p);
+                        break;
+
+                    case 2:
+                        media.adicionar(p);
+                        break;
+
+                    case 3:
+                        baixa.adicionar(p);
+                        break;
+
+                    default:
+                        baixa.adicionar(p);
+                        break;
+                }
             }
         } catch (Exception e) {
             System.err.println("Erro ao carregar CSV: " + e.getMessage());
