@@ -24,10 +24,15 @@ public class Processo {
     }
 
     public int getId(){ return id; }
+
     public String getNome(){ return nome; }
+
     public int getPrioridade(){ return prioridade; }
+
     public int getCiclos_necessarios(){ return ciclos_necessarios; }
+
     public void reduzirCiclo() { this.ciclos_necessarios--; }
+
     public String getRecurso_necessario(){ return recurso_necessario; }
 
     @Override

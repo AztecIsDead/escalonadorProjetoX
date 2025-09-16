@@ -19,15 +19,7 @@ public class Escalonador {
                 String[] dados = linha.split(",");
                 int id = Integer.parseInt(dados[0].trim());
                 String nome = dados[1].trim();
-                String prioridadeTxt = dados[2].trim();
-                int prioridade;
-                if (prioridadeTxt.equalsIgnoreCase("Alta")) {
-                    prioridade = 1;
-                } else if (prioridadeTxt.equalsIgnoreCase("Média") || prioridadeTxt.equalsIgnoreCase("Media")) {
-                    prioridade = 2;
-                } else {
-                    prioridade = 3; // Baixa
-                }
+                int prioridade = Integer.parseInt(dados[2].trim());
                 int ciclos = Integer.parseInt(dados[3].trim());
                 String recurso = dados[4].trim();
 
@@ -81,6 +73,7 @@ public class Escalonador {
 
             if (atual.getRecurso_necessario().equalsIgnoreCase("Disco") && !atual.isJaBloqueado()) {
                 System.out.println("[BLOQUEADO] " + atual.getNome() + " precisa de Disco.");
+                System.out.println(atual);
                 atual.setJaBloqueado(true);
                 bloqueados.adicionar(atual);
                 continue;
@@ -95,6 +88,7 @@ public class Escalonador {
                 else baixa.adicionar(atual);
             } else {
                 System.out.println("[FINALIZADO] " + atual.getNome());
+                System.out.println(atual);
             }
         }
 

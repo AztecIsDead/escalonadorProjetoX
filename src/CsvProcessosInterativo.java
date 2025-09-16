@@ -20,13 +20,13 @@ public class CsvProcessosInterativo {
                 String nome = scanner.nextLine().trim();
                 if (nome.equalsIgnoreCase("sair")) break;
 
-                System.out.print("Prioridade (Alta, Média, Baixa): ");
-                String prioridade = scanner.nextLine().trim();
+                System.out.print("Prioridade (Alta (1), Média (2), Baixa (3)): ");
+                int prioridade = Integer.parseInt(scanner.nextLine().trim());
 
                 System.out.print("Ciclos Necessários (>0): ");
                 int ciclos = Integer.parseInt(scanner.nextLine().trim());
 
-                System.out.print("Recurso Necessário (Nulo, Disco): ");
+                System.out.print("Recurso Necessário (Nenhum, Disco): ");
                 String recurso = scanner.nextLine().trim();
 
                 writer.write(idCounter + "," + nome + "," + prioridade + "," + ciclos + "," + recurso);
