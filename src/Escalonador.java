@@ -21,7 +21,7 @@ public class Escalonador {
                 String nome = dados[1].trim();
                 int prioridade = Integer.parseInt(dados[2].trim());
                 int ciclos = Integer.parseInt(dados[3].trim());
-                String recurso = dados[4].trim();
+                String recurso = (dados.length > 4 && dados[4] != null) ? dados[4].trim() : ""; // Isso impede que haja erro caso o campo de "Recurso" esteja nulo.
 
                 Processo p = new Processo(id, nome, prioridade, ciclos, recurso); //define "p" como um novo processo
 
