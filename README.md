@@ -44,6 +44,7 @@ ID,Nome,Prioridade,Ciclos,Recurso (Cabeçalho)
 Após a execução do código seguindo as regras anteriores, e fazendo uso do arquivo de exemplo ``processos.csv`` presente neste repositório, a saída esperada no terminal será:
 ```
 --- Iniciando Simulação ---
+
 [EXECUTANDO] Processo {Id: 1, Nome: TESTE, Prioridade: 1 (Alta), Ciclos restantes: 0, Recurso: }
 [FINALIZADO] TESTE
 Processo {Id: 1, Nome: TESTE, Prioridade: 1 (Alta), Ciclos restantes: 0, Recurso: }
