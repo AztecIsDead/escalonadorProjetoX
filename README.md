@@ -21,7 +21,7 @@ ID,Nome,Prioridade,Ciclos,Recurso (Cabeçalho)
 1,Processo,1,1,NENHUM (Dados do primeiro processo, seguindo o cabeçalho)
 2,Processo,1,1,DISCO (Dados do segundo processo)
 ```
-1. A prioridade do processo inserido pode ser de 1 a 3 (1 para ``Alta``, 2 para ``Média`` e 3 para ``Baixa``).
+1. A ``prioridade`` do processo inserido pode ser de 1 a 3 (1 para ``Alta``, 2 para ``Média`` e 3 para ``Baixa``).
 
 
 2. O número de ``ciclos`` necessários para qualquer dado processo não pode ser menor que um (1).
@@ -32,10 +32,10 @@ ID,Nome,Prioridade,Ciclos,Recurso (Cabeçalho)
 - A cada cinco (5) processos de **Alta Prioridade**  realizados em **sequência**, o escalonador executará um processo de prioridade **Média** ou menor (de acordo com a disponibilidade). A ``prioridade`` de um processo é representada no código pela variável da classe ``Processo.java``:``prioridade`` do tipo `int`.
 
 
-- Executar um processo diminui os **ciclos** necessários por um (1), até chegar a **zero** e partir para o próximo **processo**. Os **ciclos** são representados dentro do código pela variável ``ciclos_necessarios``.
+- Executar um processo diminui os **ciclos** necessários por um (1), até chegar a **zero** e partir para o próximo **processo**. Os ``ciclos`` são representados dentro do código pela variável ``ciclos_necessarios``.
 
 
-- Os processos serão realizados de acordo com a **prioridade** de cada um (``Alta`` prioridade primeiro, depois ``Média`` e, por fim, ``Baixa`` prioridade), exceto quando a primeira regra se aplica, onde processos de prioridades menores que ``Alta`` serão executados primeiro após uma sequência de processos de ``Alta`` prioridade.
+- Os processos serão realizados de acordo com a ``prioridade`` de cada um (``Alta`` prioridade primeiro, depois ``Média`` e, por fim, ``Baixa`` prioridade), exceto quando a primeira regra se aplica, onde processos de prioridades menores que ``Alta`` serão executados primeiro após uma sequência de processos de ``Alta`` prioridade.
 
 
 - Processos com o campo ``Recurso`` marcados com ``DISCO`` sofrem **bloqueio**, e são adicionados a uma lista. Eles serão removidos dessa lista e considerados **desbloqueados** quando um **ciclo** terminar. Após serem desbloqueados, eles serão executados seguindo a sua **prioridade**. No código é gerenciado a partir da variável do tipo `String`, ``recurso_necessario``.
