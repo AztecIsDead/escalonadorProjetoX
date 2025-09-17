@@ -7,6 +7,7 @@ public class ListaDeProcessos {
         this.tail = null;
     }
 
+    //metodo para adicionar um novo processo a lista
     public void adicionar(Processo processo) {
         Node node = new Node(processo);
         if (head == null) {
@@ -18,6 +19,7 @@ public class ListaDeProcessos {
         }
     }
 
+    //metodo para remover um processo da lista
     public Processo remover() {
         if (head == null) return null;
         Processo p = head.processo;
@@ -28,8 +30,9 @@ public class ListaDeProcessos {
 
     public boolean isEmpty() {
         return head == null;
-    }
+    } //checagem se a lista estiver vazia
 
+    //metodo de exibicao dos processos da lista
     public void exibir() {
         Node temp = head;
         while (temp != null) {

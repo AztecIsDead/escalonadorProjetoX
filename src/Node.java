@@ -7,3 +7,4 @@ public class Node {
         this.next = null;
     }
 }
+//classe de node para a lista encadeada de processos

@@ -8,7 +8,7 @@ public class Escalonador {
     private ListaDeProcessos baixa = new ListaDeProcessos();//cria uma lista de processos nova a partir da String: baixa
     private ListaDeProcessos bloqueados = new ListaDeProcessos();//cria uma lista de processos nova a partir da String: bloqueados
 
-    private int contadorAlta = 0; //cria o Integer contadorAlta para usar no IF para a cada 5 de alta, 1 de média.
+    private int contadorAlta = 0; //cria o Integer contadorAlta para usar no IF para a cada 5 de alta, 1 de media.
 
     public void carregarDeCsv(String filePath) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath, StandardCharsets.UTF_8))) {
@@ -39,15 +39,16 @@ public class Escalonador {
                         break;
 
                     default:
-                        baixa.adicionar(p);//registrar como prioridade BAIXA caso não identifique o input
+                        baixa.adicionar(p);//registrar como prioridade BAIXA caso nao identifique o input
                         break;
                 }
             }
         } catch (Exception e) {
-            System.err.println("Erro ao carregar CSV: " + e.getMessage());
+            System.err.println("Erro ao carregar CSV: " + e.getMessage()); //mensagem de erro caso algo esteja errado com o arquivo
         }
     }
 
+    //metodo de execucao dos processos
     public void executarCiclos() {
         System.out.println("\n--- Iniciando Simulação ---");
 
@@ -61,29 +62,29 @@ public class Escalonador {
                 else baixa.adicionar(desbloqueado);
             }//enquanto nenhum dos processos estiver vazio: desbloquear processos Disco seguindo a ordem de prioridade 1 2 e 3;
 
-            Processo atual = null;  // cria uma variável para armazenar o processo
+            Processo atual = null;  // cria uma variavel para armazenar o processo
 
             if (contadorAlta >= 5) {
                 if (!media.isEmpty()) {
-                    atual = media.remover();  // se a fila de prioridade média não está vazia, pega um processo da fila de prioridade 2
+                    atual = media.remover();  // se a fila de prioridade media nao esta vazia, pega um processo da fila de prioridade 2
                 } else if (!baixa.isEmpty()) {
-                    atual = baixa.remover();// se a fila de prioridade baixa não está vazia, pega um processo da fila de prioridade 3
+                    atual = baixa.remover();// se a fila de prioridade baixa nao esta vazia, pega um processo da fila de prioridade 3
                 }
                 contadorAlta = 0; //reseta o contador
-            }//enquanto o contador for maior ou igual a 5, executar os códigos ^acima^
+            }//enquanto o contador for maior ou igual a 5, executar os codigos ^acima^
 
-            if (atual == null) { // se ainda não foi selecionado nenhum processo para execução, executar:
+            if (atual == null) { // se ainda nao foi selecionado nenhum processo para execucao, executar:
                 if (!alta.isEmpty()) {
-                    atual = alta.remover(); // se a fila de alta prioridade não está vazia, pega um processo da fila de prioridade 1
+                    atual = alta.remover(); // se a fila de alta prioridade nao esta vazia, pega um processo da fila de prioridade 1
                     contadorAlta++; //adiciona ao contador +1
                 } else if (!media.isEmpty()) {
-                    atual = media.remover(); // pega um processo da fila de média
+                    atual = media.remover(); // pega um processo da fila de media
                 } else if (!baixa.isEmpty()) {
                     atual = baixa.remover(); // pega um processo da fila de baixa
                 }
             }
 
-            if (atual == null) continue; // se não encontrou nenhum processo, passa para a próxima iteração
+            if (atual == null) continue; // se nao encontrou nenhum processo, passa para a proxima iteracao
 
             if (atual.getRecurso_necessario().equalsIgnoreCase("Disco") && !atual.isJaBloqueado()) {
                 System.out.println("[BLOQUEADO] " + atual.getNome() + " precisa de Disco.");
@@ -91,7 +92,7 @@ public class Escalonador {
                 atual.setJaBloqueado(true);
                 bloqueados.adicionar(atual);
                 continue;
-            } // verifica se o processo precisa de recurso (Disco) e ainda não foi bloqueado
+            } // verifica se o processo precisa de recurso (DISCO) e ainda nao foi bloqueado
 
             atual.reduzirCiclo(); // Executa 1 ciclo do processo
             System.out.println("[EXECUTANDO] " + atual);
@@ -104,7 +105,7 @@ public class Escalonador {
             else {
                 System.out.println("[FINALIZADO] " + atual.getNome());
                 System.out.println(atual);
-            }//se não, finaliza o código.
+            }//se nao, finaliza o codigo.
         }
 
         System.out.println("\n--- Simulação Encerrada ---");

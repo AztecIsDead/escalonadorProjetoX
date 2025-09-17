@@ -1,4 +1,5 @@
 public class Processo {
+    //Variaveis universais de cada processo
     private int id;
     private String nome;
     private int prioridade;
@@ -8,13 +9,14 @@ public class Processo {
 
     public boolean isJaBloqueado() {
         return jaBloqueado;
-    }
+    } //Checagem de bloqueio de processos de "DISCO"
 
     public void setJaBloqueado(boolean valor) {
         this.jaBloqueado = valor;
-    }
+    } //Metodo de bloqueio de processos de "DISCO"
 
 
+    //CONSTRUTOR DA CLASSE DE PROCESSOS
     public Processo(int id, String nome, int prioridade, int ciclos_necessarios, String recurso_necessario){
         this.id = id;
         this.nome = nome;
@@ -35,29 +37,30 @@ public class Processo {
 
     public String getRecurso_necessario(){ return recurso_necessario; }
 
+    //Override do metodo toString para facilitar a impressao dos dados do processo no console
     @Override
     public String toString() {
         switch (this.prioridade){
             case 1:
                 return "Processo {Id: " + id + ", Nome: " + nome +
                     ", Prioridade: " + prioridade + " (Alta)" +
-                    ", Ciclos: " + ciclos_necessarios +
+                    ", Ciclos restantes: " + ciclos_necessarios +
                     ", Recurso: " + recurso_necessario + "}";
             case 2:
                 return "Processo {Id: " + id + ", Nome: " + nome +
                         ", Prioridade: " + prioridade + " (Média)" +
-                        ", Ciclos: " + ciclos_necessarios +
+                        ", Ciclos restantes: " + ciclos_necessarios +
                         ", Recurso: " + recurso_necessario + "}";
 
             case 3:
                 return "Processo {Id: " + id + ", Nome: " + nome +
                         ", Prioridade: " + prioridade + " (Baixa)" +
-                        ", Ciclos: " + ciclos_necessarios +
+                        ", Ciclos restantes: " + ciclos_necessarios +
                         ", Recurso: " + recurso_necessario + "}";
             default:
                 return "Processo {Id: " + id + ", Nome: " + nome +
                         ", Prioridade: " + prioridade +
-                        ", Ciclos: " + ciclos_necessarios +
+                        ", Ciclos restantes: " + ciclos_necessarios +
                         ", Recurso: " + recurso_necessario + "}";
         }
     }
