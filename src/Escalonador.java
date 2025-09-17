@@ -50,7 +50,7 @@ public class Escalonador {
 
     //metodo de execucao dos processos
     public void executarCiclos() {
-        System.out.println("\n--- Iniciando Simulação ---");
+        System.out.println("--- Iniciando Simulação ---\n");
 
         while (!alta.isEmpty() || !media.isEmpty() || !baixa.isEmpty() || !bloqueados.isEmpty()) {
 
